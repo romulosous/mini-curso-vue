@@ -11,19 +11,29 @@ const routes = [
     component:  () => import("../views/Login")
   },
   {
-    path: "/home",
+    path: "/",
     name: "home",
     component: TemplatePadrao,
     children: [
       {
         path: "/cadastro-usuario",
         name: "cadastro-usuario",
-        component: () => import("../views/CadastroUsuario")
+        component: () => import("../views/CadastroUsuario.vue")
       },
       {
         path: "/usuarios",
         name: "usuarios",
-        component: () => import("../views/Usuarios")
+        component: () => import("../views/Usuarios.vue")
+      },
+      {
+        path: "/posts",
+        name: "posts",
+        component: () => import("../views/Post.vue")
+      },
+      {
+        path: "/novo",
+        name: "novo",
+        component: () => import("../views/PostForm.vue")
       }
     ]
 

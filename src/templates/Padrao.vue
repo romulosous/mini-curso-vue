@@ -9,13 +9,21 @@
         <b-navbar-nav>
           <b-nav-item to="/usuarios">Usuários</b-nav-item>
           <b-nav-item to="/cadastro-usuario">Cadastro de Usuários</b-nav-item>
+          <b-nav-item to="/posts">Posts</b-nav-item>
+          <b-nav-item to="/novo">Novo Post</b-nav-item>
         </b-navbar-nav>
 
         <!-- Right aligned nav items -->
         <b-navbar-nav class="ml-auto">
           <b-nav-form>
-            <b-form-input size="sm" class="mr-sm-2" placeholder="Search"></b-form-input>
-            <b-button size="sm" class="my-2 my-sm-0" type="submit">Search</b-button>
+            <b-form-input
+              size="sm"
+              class="mr-sm-2"
+              placeholder="Search"
+            ></b-form-input>
+            <b-button size="sm" class="my-2 my-sm-0" type="submit"
+              >Search</b-button
+            >
           </b-nav-form>
 
           <b-nav-item-dropdown text="Lang" right>
@@ -37,10 +45,10 @@
       </b-collapse>
     </b-navbar>
     <div class="container">
-      <router-view/>
+      <router-view />
     </div>
     <footer class="text-center">
-      Curso de Web-dev <br>
+      Curso de Web-dev <br />
       by @romulosous
     </footer>
   </div>

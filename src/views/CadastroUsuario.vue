@@ -1,7 +1,8 @@
 <template>
   <div>
     <h2 class="text-center">Cadastro de Usuário</h2>
-    <b-form @submit.prevent="Cadastrar">
+    <b-alert v-if="msgSuccess" variant="success" show>{{msgSuccess}}</b-alert>
+    <b-form @submit.prevent="cadastrar()">
       <b-form-group label="Nome:" label-for="nome">
         <b-form-input
           id="nome"
@@ -27,13 +28,28 @@
 </template>
 
 <script>
+import axios from 'axios'
 export default {
   data () {
     return {
       usuario: {
         nome: '',
-        idade: null
-      }
+        idade: null,
+      },
+      msgSuccess: ''
+
+    }
+  },
+  methods:{
+    cadastrar(){
+      axios.post('https://ifpi-web-nodejs.herokuapp.com/usuarios', this.usuario).then((retorno) => {
+        console.log(retorno)
+        this.msgSuccess = retorno.data;
+        this.nome = '';
+        this.idade = null;
+      }).catch((erro) => {
+        console.error(erro);
+      })
     }
   }
 }
