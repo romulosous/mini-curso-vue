@@ -3,7 +3,7 @@
     <h3>Posts</h3>
     <b-table :items="posts"></b-table>
     <div v-if="loadAtivo" class="d-flex justify-content-center mb-3">
-        <b-spinner variant="primary" label="Spinning"></b-spinner>
+      <b-spinner variant="primary" label="Spinning"></b-spinner>
     </div>
   </div>
 </template>
@@ -19,6 +19,7 @@ export default {
   created () {
     // this.consultar()
     this.carreagarEmTempoReal()
+
   },
   methods: {
     consultar () {
@@ -44,7 +45,6 @@ export default {
               console.log('New Post: ', change.doc.data())
               this.posts.push(change.doc.data())
               this.loadAtivo = false;
-
             }
             if (change.type === 'modified') {
               console.log('Modified city: ', change.doc.data())
